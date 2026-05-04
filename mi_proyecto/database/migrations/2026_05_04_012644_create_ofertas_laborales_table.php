@@ -1,9 +1,16 @@
+<?php
+
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateOfertasLaboralesTable extends Migration
+return new class extends Migration
 {
+    /**
+     * Undocumented function
+     *
+     * @return void
+     */
     public function up()
     {
         Schema::create('ofertas_laborales', function (Blueprint $table) {
@@ -16,8 +23,14 @@ class CreateOfertasLaboralesTable extends Migration
             $table->foreign('rut_usuario')->references('rut_usuario')->on('usuario');
         });
     }
+    /**
+     * Undocumented function
+     *
+     * @return void
+     */
     public function down()
     {
         Schema::dropIfExists('ofertas_laborales');
     }
-}
+
+};

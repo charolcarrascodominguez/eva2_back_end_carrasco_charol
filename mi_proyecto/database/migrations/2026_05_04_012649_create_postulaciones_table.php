@@ -1,10 +1,17 @@
+<?php
+
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePostulacionesTable extends Migration
+return new class extends Migration
 {
-    public function up()
+    /**
+     *
+     *
+     * @return void
+     */
+     public function up()
     {
         Schema::create('postulaciones', function (Blueprint $table) {
             $table->id('id_postulacion');
@@ -18,8 +25,13 @@ class CreatePostulacionesTable extends Migration
             $table->foreign('rut_candidato')->references('rut_usuario')->on('usuario');
         });
     }
+    /**
+     * Undocumented function
+     *
+     * @return void
+     */
     public function down()
     {
         Schema::dropIfExists('postulaciones');
     }
-}
+};

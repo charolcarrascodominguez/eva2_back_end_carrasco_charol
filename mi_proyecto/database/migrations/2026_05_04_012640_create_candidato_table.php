@@ -1,10 +1,17 @@
+<?php
+
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCandidatoTable extends Migration
+return new class extends Migration
 {
-    public function up()
+    /**
+     * Undocumented function
+     *
+     * @return void
+     */
+     public function up()
     {
         Schema::create('candidato', function (Blueprint $table) {
             $table->string('rut_cantidado', 20)->primary();
@@ -14,8 +21,13 @@ class CreateCandidatoTable extends Migration
             $table->string('profesion', 50);
         });
     }
+    /**
+     * Undocumented function
+     *
+     * @return void
+     */
     public function down()
     {
         Schema::dropIfExists('candidato');
     }
-}
+};
